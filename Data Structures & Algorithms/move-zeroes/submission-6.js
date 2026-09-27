@@ -1,0 +1,17 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @return {void} Do not return anything, modify nums in-place instead.
+     */
+    moveZeroes(nums) {
+
+        if(nums.length === 0) return nums;
+        let left = 0;
+        for(let right = 0; right < nums.length; right++){
+            if(nums[right] !== 0){
+                [nums[left], nums[right]] = [nums[right], nums[left]];
+                left++;
+            }
+        }
+    }
+}
